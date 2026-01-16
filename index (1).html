@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SharmaYT - Your YouTube Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; font-family: 'Roboto', sans-serif; }
+        body { background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); color: #fff; }
+        a { color: inherit; text-decoration: none; }
+
+        /* Header / Navbar */
+        header {
+            position: fixed; top:0; left:0; width:100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(10px);
+            display:flex; justify-content:space-between; align-items:center; padding:15px 50px; z-index:1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        header h1 { font-size: 1.8rem; color:#00c6ff; }
+        nav a { margin-left: 30px; font-weight:500; transition:0.3s; }
+        nav a:hover { color:#ffb400; }
+
+        /* Hero Section */
+        .hero {
+            display:flex; flex-direction:column; justify-content:center; align-items:center;
+            height:100vh; text-align:center; padding:0 20px;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        }
+        .hero h2 { font-size:3rem; margin-bottom:15px; color:#00c6ff; }
+        .hero p { font-size:1.2rem; margin-bottom:25px; color:#fff; }
+        .hero button {
+            padding:12px 25px; font-size:1rem; border:none; border-radius:50px; cursor:pointer;
+            background: linear-gradient(45deg, #00c6ff, #ffb400);
+            color:#000; font-weight:bold; transition:0.3s; box-shadow: 0 5px 15px rgba(0,198,255,0.5);
+        }
+        .hero button:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,180,0,0.5); }
+
+        /* Section Titles */
+        section { padding:100px 50px; }
+        section h2 { font-size:2.5rem; margin-bottom:50px; text-align:center; color:#00c6ff; text-shadow: 2px 2px 10px rgba(0,0,0,0.5);}
+        
+        /* Videos Section */
+        .videos-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:30px; }
+        .video-card {
+            background:#1c1c1c; border-radius:15px; overflow:hidden; transition:0.3s; box-shadow: 0 5px 20px rgba(0,198,255,0.3);
+        }
+        .video-card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(255,180,0,0.5); }
+        .video-card iframe { width:100%; height:200px; border:none; }
+
+        /* About Section */
+        .about { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:50px; }
+        .about img { width:300px; border-radius:20px; box-shadow: 0 5px 25px rgba(0,198,255,0.5); }
+        .about-text { max-width:600px; }
+        .about-text p { font-size:1.1rem; line-height:1.8; }
+
+        /* Blog Section */
+        .blog-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:30px; }
+        .blog-card {
+            background:#1c1c1c; border-radius:15px; padding:20px; box-shadow: 0 5px 20px rgba(255,180,0,0.3); transition:0.3s;
+        }
+        .blog-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,198,255,0.5); }
+        .blog-card h3 { color:#ffb400; margin-bottom:10px; }
+        .blog-card p { font-size:1rem; line-height:1.6; }
+
+        /* Contact Section */
+        .contact-form { max-width:500px; margin:auto; display:flex; flex-direction:column; gap:20px; }
+        .contact-form input, .contact-form textarea {
+            padding:15px; border-radius:10px; border:none; outline:none;
+            font-size:1rem; background:#2c2c2c; color:#fff;
+        }
+        .contact-form button {
+            padding:15px; border:none; border-radius:50px; cursor:pointer;
+            background: linear-gradient(45deg, #00c6ff, #ffb400); color:#000; font-weight:bold;
+        }
+        .contact-form button:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,180,0,0.5); }
+
+        /* Footer */
+        footer { text-align:center; padding:30px; background:#111; color:#888; }
+        footer a { color:#00c6ff; margin:0 10px; transition:0.3s; }
+        footer a:hover { color:#ffb400; }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>SharmaYT</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#videos">All Videos</a>
+            <a href="#about">About</a>
+            <a href="#blog">Posts</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h2>Welcome to SharmaYT</h2>
+        <p>All your favorite YouTube videos in one place!</p>
+        <button onclick="window.open('https://www.youtube.com/@SharmaYT', '_blank')">Watch Videos</button>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos">
+        <h2>All Videos</h2>
+        <div class="videos-grid">
+            <!-- Example video cards -->
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+            </div>
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/oHg5SJYRHA0" allowfullscreen></iframe>
+            </div>
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/3GwjfUFyY6M" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about">
+            <img src="https://via.placeholder.com/300x300.png?text=SharmaYT" alt="SharmaYT">
+            <div class="about-text">
+                <p>Hello! I am Sharma, a passionate YouTuber sharing videos on various topics. This website collects all my YouTube videos, posts, and updates in one place for easy access. Follow me and stay updated with my latest content!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog/Posts Section -->
+    <section id="blog">
+        <h2>Latest Posts</h2>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <h3>New Video Uploaded!</h3>
+                <p>Check out my latest YouTube video about tech tutorials and tips. Stay updated with all the new content here!</p>
+            </div>
+            <div class="blog-card">
+                <h3>Behind the Scenes</h3>
+                <p>Learn how I create my videos and the process behind producing quality content for my viewers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Services & Portfolio</h2>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <h3>Collaboration</h3>
+                <p>I offer collaborations with other creators and brands. Get in touch for exciting projects!</p>
+            </div>
+            <div class="blog-card">
+                <h3>Content Creation</h3>
+                <p>Professional content creation for YouTube, blogs, and social media platforms.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p style="text-align:center; margin-top:20px;">
+            WhatsApp: <a href="https://wa.me/9816715771" target="_blank">9816715771</a>
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 SharmaYT. All rights reserved.</p>
+        <p>
+            <a href="https://www.youtube.com/@SharmaYT" target="_blank">YouTube</a> | 
+            <a href="https://www.facebook.com/YourFacebookPage" target="_blank">Facebook</a> | 
+            <a href="https://www.instagram.com/YourInstagramProfile" target="_blank">Instagram</a>
+        </p>
+    </footer>
+
+</body>
+</html>
